@@ -6,14 +6,24 @@ export class Factura {
     numero:number;
     recargo:number;
     tipoPago:string;
-    totalItems:number;
-    totalFinal:number;
+    totalItems?:number;
+    totalFinal?:number;
     fecha:Date;
     //Relaciones
     cliente:Cliente | undefined;
     detalles:Array<DetalleFactura> = [];
 
-  constructor(letra: string,numero: number,recargo: number,tipoPago: string,totalItems: number,totalFinal: number,fecha: Date, cliente:Cliente, detalles:Array<DetalleFactura>) {
+
+  constructor(
+    letra: string, 
+    numero: number, 
+    recargo: number, 
+    tipoPago: string,
+    fecha: Date, 
+    detalles: Array<DetalleFactura>,
+    totalItems?: number, 
+    totalFinal?: number 
+) {
     this.letra = letra
     this.numero = numero
     this.recargo = recargo
@@ -21,9 +31,9 @@ export class Factura {
     this.totalItems = totalItems
     this.totalFinal = totalFinal
     this.fecha = fecha
-    this.cliente = cliente;
-    this.detalles = detalles;
+    this.detalles = detalles
   }
+
 
   //PUNTO 2
   calcularTotalItems (){

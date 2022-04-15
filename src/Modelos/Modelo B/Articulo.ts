@@ -8,11 +8,10 @@ export class Articulo {
     //Relaciones
     detallesFacturas:Array<DetalleFactura> = [];
 
-    constructor(codigo:number, denominacion:string, precio:number, unidadMedida:string, detallesFacturas:Array<DetalleFactura>){
+    constructor(codigo:number, denominacion:string, precio:number, unidadMedida:string){
         this.codigo = codigo;
         this.denominacion = denominacion;
         this.precio = precio;
         this.unidadMedida = unidadMedida;
-        this.detallesFacturas = detallesFacturas;
     }
 }
